@@ -181,6 +181,7 @@ textarea {
 }
 """
 
+# Định nghĩa giao diện Gradio
 with gr.Blocks(css=elegant_css) as demo:
     gr.Markdown("""
     # 🏢 HỆ THỐNG DỰ ĐOÁN & ĐÁNH GIÁ BÊ TÔNG XANH 
@@ -222,5 +223,6 @@ with gr.Blocks(css=elegant_css) as demo:
         outputs=ket_qua
     )
 
-if __name__ == '__main__':
-    demo.launch(server_name="0.0.0.0", server_port=10000)
+# --- QUAN TRỌNG: Khởi tạo biến `app` cho Vercel ---
+app = FastAPI()
+app = gr.mount_gradio_app(app, demo, path="/")
