@@ -2,6 +2,7 @@ import os
 import pandas as pd
 import numpy as np
 import gradio as gr
+from fastapi import FastAPI # <--- THÊM DÒNG NÀY VÀO ĐÂY
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import ColumnTransformer
